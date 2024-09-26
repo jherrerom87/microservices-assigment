@@ -4,6 +4,21 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
 
+## Start database
+
+You can run your mongodb database with docker using:
+
+```shell script
+docker run --name testdb -p 27017:27017 -d mongo:latest
+```
+
+or you can use your already installed mongodb database. In that case you should update the following properties in the application.properties
+
+```
+quarkus.mongodb.connection-string = mongodb://localhost:{port}
+quarkus.mongodb.database = {dbName}
+```
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
